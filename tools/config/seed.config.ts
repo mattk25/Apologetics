@@ -120,6 +120,7 @@ export class SeedConfig {
       [this.BOOTSTRAP_MODULE]: `${this.APP_BASE}${this.BOOTSTRAP_MODULE}`,
       'angular2/*': `${this.APP_BASE}angular2/*`,
       'rxjs/*': `${this.APP_BASE}rxjs/*`,
+	  'dragula': `${this.APP_BASE}node_modules/dragula/dist/dragula.min`,
       '*': `${this.APP_BASE}node_modules/*`
     },
     packages: {
@@ -134,6 +135,7 @@ export class SeedConfig {
     defaultJSExtensions: true,
     paths: {
       [`${this.TMP_DIR}/*`]: `${this.TMP_DIR}/*`,
+	  'dragula': `node_modules/dragula/dist/dragula.min.js`,
       '*': 'node_modules/*'
     }
   };

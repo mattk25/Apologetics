@@ -3,12 +3,13 @@ import {ReferenceService} from '../../../shared/services/reference.service';
 import {Reference} from '../../model/reference';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 import {Router} from 'angular2/router';
+import {DragulaService, Dragula} from 'ng2-dragula/ng2-dragula';
 
 @Component({
     selector: 'ref-card',
     templateUrl: 'app/components/references/ref-card.component.html',
-    directives: [ROUTER_DIRECTIVES],
-    viewProviders: [],
+    directives: [ROUTER_DIRECTIVES, Dragula],
+    viewProviders: [DragulaService],
     styleUrls: ['app/components/references/ref-card.component.css']
 })
 export class ReferenceCard {

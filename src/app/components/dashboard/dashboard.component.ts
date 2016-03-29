@@ -5,12 +5,14 @@ import {Topic} from '../../model/topic';
 import {ReferenceService} from '../../../shared/services/reference.service';
 import {SearchPipe} from './dashboard-search.filter';
 import {DashboardSearchComponent } from './dashboard-search.component';
+import {DragulaService, Dragula} from 'ng2-dragula/ng2-dragula';
 @Component({
     selector: 'app-dashboard',
     templateUrl: 'app/components/dashboard/dashboard.component.html',
-    directives: [ReferenceTable, DashboardSearchComponent],
+    directives: [ReferenceTable, Dragula, DashboardSearchComponent],
     pipes: [SearchPipe],
-    styleUrls: ['app/components/dashboard/dashboard.component.css']
+    styleUrls: ['app/components/dashboard/dashboard.component.css'],
+	viewProviders: [DragulaService]
 })
 export class DashboardComponent implements OnInit {
 
