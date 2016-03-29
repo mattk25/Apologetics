@@ -1,0 +1,22 @@
+    <!--<dashboard-search></dashboard-search>-->
+<dashboard-search (update)="term = $event"></dashboard-search>
+<div style="margin-top: 20px" class="row">
+    <div class="module-container col-xs-3" *ngFor="#topic of (topics | search: (term | lowercase))">
+        <div class="module topic" (click)="gotoTopicDetail(topic)">
+            <h4>{{topic.name}}</h4>
+        </div>
+    </div>
+    <div class="module-container col-xs-3">
+        <div class="new-module" (click)="createNewTopic()">
+            <i class="fa fa-plus-square"></i>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+

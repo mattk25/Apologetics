@@ -1,0 +1,24 @@
+<div class="row">
+    <table class="table-bordered table-hover col-md-12 refList">
+        <thead>
+            <tr>
+                <th>id</th>
+                <td>name</td>
+                <td>type</td>
+                <td>value</td>
+            </tr>
+
+        </thead>
+        <tbody>
+            <tr *ngFor="#ref of references" >
+                <th class="col-md-2">{{ref.id}}</th>
+                <th class="col-md-2">{{ref.name}}</th>
+                <th class="col-md-2">{{ref.type}}</th>
+                <th class="col-md-2">{{ref.value}}</th>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="row refList">
+    <a [routerLink]="['Dashboard']" class="btn btn-primary">Create</a> 
+</div>

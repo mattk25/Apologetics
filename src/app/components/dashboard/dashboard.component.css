@@ -1,0 +1,37 @@
+.module {
+  padding: 20px;
+  text-align: center;
+  color: #eee;
+  max-height: 120px;
+  background-color: #607d8b;
+  border-radius: 2px;
+}
+
+.new-module {
+  font-size: 80px;
+  color: #b37c18;
+  text-align: center;
+  outline: gray solid 1px;
+  height: 80px;
+  border-radius: 2 px;
+}
+
+.module-container {
+  padding: 20px;
+}
+
+h4 {
+  position: relative;
+}
+
+.module:hover {
+  background-color: #eee;
+  cursor: pointer;
+  color: #607d8b;
+}
+
+.new-module:hover {
+  background-color: green;
+  cursor: pointer;
+  color: #607d8b;
+}

@@ -1,0 +1,8 @@
+<nav class="navbar navbar-light bg-faded">
+    <a class="navbar-brand" href="#">{{title}}</a>
+    <ul class="nav navbar-nav">
+        <li class="nav-item" [class.active]="_router.isRouteActive(_router.generate(['Dashboard']))"><a [routerLink]="['Dashboard']" class="nav-link">Dashboard</a></li>
+        <li class="nav-item" [class.active]="_router.isRouteActive(_router.generate(['About']))"><a [routerLink]="['About']" class="nav-link">Create Reference</a></li>
+    </ul>
+</nav>
+

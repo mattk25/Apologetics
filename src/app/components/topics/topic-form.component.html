@@ -1,0 +1,12 @@
+<div class="container">
+    <h1>Create Topic...</h1>
+    <form>
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" required  [(ngModel)]="topic.name" ngControl="name">
+            TODO: remove this: {{topic.name}}
+        </div>
+        <button type="button" class="btn btn-default" (click)="createNewTopic()">Create</button>
+    </form>
+
+</div>

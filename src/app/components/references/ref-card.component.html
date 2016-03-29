@@ -1,0 +1,50 @@
+
+<!--<div class="card">
+    <div class="row">
+    <div class="card-header">
+        {{reference.name}}
+    </div>
+    </div>
+    <div class="row">
+    <div class="flip">
+    <div class="card-block clearfix" [ngClass]="{flipped: isFlipped}" (click)="toggleFlip(!isFlipped)">
+        <div class="row">
+        <div class="face front col-xs-12">
+            <p class="card-text">{{reference.value}}</p>
+        </div>
+        </div>
+        <div class="row">
+        <div class="face back col-xs-12">
+            <p class="card-text">back of card</p>      
+        </div> 
+        </div>
+    </div>
+    </div>
+    </div>
+</div>-->
+
+
+
+
+<div class="card" >
+    <div class="card-header" [ngClass]="typeStyles">
+        {{reference.name}}
+    </div>
+     
+            <div class="flip clearfix">
+    <div class="card-block clearfix" [ngClass]="{flipped: isFlipped}" (click)="toggleFlip(!isFlipped)">
+        <div class="row">
+            <div class="face front col-xs-12">
+                <p class="card-text">{{reference.value}}</p>
+            </div>
+       
+        
+            <div class="face back col-xs-12 clearfix">
+                <p class="card-text">back of card This is a reference thing that has a very very long item very very very very . This is a reference thing that has a very very long item very very very very .This is a reference thing that has a very very long item very very very very .This is a reference thing that has a very very long item very very very very . This is a reference thing that has a very very long item very very very very .</p>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer">
+        <!--<a href="/">Link To Reference:URL</a>-->
+    </div>
+</div>
