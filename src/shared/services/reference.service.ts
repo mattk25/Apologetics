@@ -2,6 +2,7 @@ import {Injectable} from 'angular2/core';
 import {REFERENCES} from './mock-references';
 import {TOPICS} from './mock-topics';
 import {Topic} from '../../app/model/topic';
+import {Reference} from '../../app/model/reference';
 
 
 @Injectable()
@@ -9,7 +10,13 @@ export class ReferenceService {
     MOCK_IDENTIFIER: number = 11;
 
     getReferences() {
-        return Promise.resolve(REFERENCES);
+        return Promise.resolve(REFERENCES.sort(function(a, b) {
+			if(a.ranking < b.ranking)
+				return -1;
+			if(a.ranking > b.ranking)
+				return 1;
+			return 0
+		}));
     }
 
     getReference(id: number) {

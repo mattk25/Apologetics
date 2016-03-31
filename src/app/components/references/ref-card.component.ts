@@ -23,6 +23,12 @@ export class ReferenceCard {
        this.isFlipped = newState;
     }
 
+	dropped(event: any) {
+		event.preventDefault();
+		event.stopPropagation();
+		console.log(event);
+	}
+
     ngOnInit() {
         if(this.reference.type === 'Quote') {
             this.typeStyles['bg-success'] = true;

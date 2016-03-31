@@ -6,6 +6,7 @@ export class Reference {
     public type: string;
     public value: string;
     public tags: Tag[];
+	public ranking: number;
 
     constructor() {
         this.id = 0;

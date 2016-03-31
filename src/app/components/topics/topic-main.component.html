@@ -3,11 +3,11 @@
 <ref-search></ref-search>
 </div>
 <div class="row" style="margin-top:20px">
-	<div class="container" [dragula]='"first-bag"'>
-<div class="col-xs-12 col-md-3" *ngFor="#ref of topic.references" >
-		<ref-card [reference]="ref"></ref-card>
+		<div class="container-fluid" [dragula]='"first-bag"' [dragulaModel]='topic.references'>
+			<div class="col-xs-12 col-md-3" *ngFor="#ref of topic.references" >
+				<ref-card [reference]="ref" [ranking]="ref.ranking" (dropModel)="dropped($event)"></ref-card>
+		</div>
+</div>
 
-</div>
-</div>
 </div>
 
