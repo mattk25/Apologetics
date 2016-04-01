@@ -6,11 +6,14 @@ import {AboutComponent} from '../about/AboutComponent';
 import {HeaderComponent} from '../layout/header.component';
 import {TopicComponent} from '../topics/topic-main.component';
 import {TopicFormComponent} from '../topics/topic-form.component';
+import {ReferenceFormComponent} from '../references/ref-form.component';
+
 @RouteConfig([
     {path: '/dashboard', name: 'Dashboard', component: DashboardComponent, useAsDefault: true},
     {path: '/about', name: 'About', component: AboutComponent},
     {path: '/topic/:id', name: 'Topic', component: TopicComponent},
     {path: '/topic', name: 'NewTopic', component: TopicFormComponent},
+	{path: '/topic/:topicId/reference/:refId', name: 'EditRef' ,component: ReferenceFormComponent}
 ])
 @Component({
     selector: 'sd-app',

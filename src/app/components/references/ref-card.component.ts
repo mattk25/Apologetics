@@ -25,7 +25,7 @@ export class ReferenceCard {
 	isVisible: boolean = true;
 	@Input() activeCard: boolean;
 
-    constructor(private __referenceService: ReferenceService, _router: Router) {
+    constructor(private __referenceService: ReferenceService, private _router: Router) {
 		console.log(this.editMode);
 	 }
 
@@ -40,9 +40,12 @@ export class ReferenceCard {
 	}
 
 	editRef() {
-		this.activeCard = true;
-		this.startEdits.emit(true);
-	}
+		this._router.navigate(['EditRef', {topicId: 1 , refId: this.reference.id}]);
+    }
+		//this.activeCard = true;
+		//this.startEdits.emit(this.reference);
+
+
 
     ngOnInit() {
         console.log(this.editMode);

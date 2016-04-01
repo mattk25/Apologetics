@@ -1,0 +1,30 @@
+{{reference | json}}
+<form>
+<div class="card clearfix">
+	<div class="card-header clearfix">
+			<div class="form-group">
+			<label class="col-xs-1" for="name">Name</label>
+			<input type="text" class="col-xs-4" required [(ngModel)]="reference.name"/>
+			</div>
+	</div>
+	<div class="flip clearfix">
+		<div class="card-block clearfix">
+			<div class="row">
+				<div class="form-group">
+					<label class="col-xs-1" for="value">Reference:</label>
+					<textarea class="col-xs-11" [(ngModel)]="reference.value"></textarea>
+
+				</div>
+				<div class="form-group">
+					<label class="col-xs-1" for="comment">Comment:</label>
+					<textarea class="col-xs-11" [(ngModel)]="reference.comment"></textarea>
+
+				</div>
+			</div>
+		</div>
+		<div class="card-footer">
+			<!--<a href="/">Link To Reference:URL</a>-->
+		</div>
+	</div>
+</div>
+</form>

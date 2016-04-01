@@ -7,7 +7,7 @@ export class Reference {
     public value: string;
     public tags: Tag[];
 	public ranking: number;
-
+	public comment: string;
     constructor() {
         this.id = 0;
     }
