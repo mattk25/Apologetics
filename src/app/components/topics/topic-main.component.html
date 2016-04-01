@@ -1,13 +1,15 @@
-
 <div class="row" style="margin-left:20px;margin-right:20px">
-<ref-search></ref-search>
+	<ref-search></ref-search>
 </div>
 <div class="row" style="margin-top:20px">
-		<div class="container-fluid" [dragula]='"first-bag"' [dragulaModel]='topic.references'>
-			<div class="col-xs-12 col-md-3" *ngFor="#ref of topic.references" >
-				<ref-card [reference]="ref" [ranking]="ref.ranking" (dropModel)="dropped($event)"></ref-card>
+	<div class="container-fluid" [dragula]='"first-bag"' [dragulaModel]='topic.references'>
+		<div [ngClass]="layoutStyles" *ngFor="#ref of topic.references">
+			<ref-card (startEdits)="changeEditMode($event)" [reference]="ref" [editMode]='editModeEnabled' [activeCard]="cardState"></ref-card>
 		</div>
+	</div>
 </div>
 
+<div class="row" style="margin-right:20px">
+	<button *ngIf="editModeEnabled" (click)="disableEditMode()">Done</button>
 </div>
 

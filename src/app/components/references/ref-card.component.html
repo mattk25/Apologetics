@@ -1,16 +1,13 @@
-<div class="card" >
-	<div class="card-header" [ngClass]="typeStyles">
-		{{reference.name}}
+<div *ngIf="!(editMode && !activeCard)" class="card clearfix">
+	<div class="card-header clearfix" [ngClass]="typeStyles">
+			<span style="float:left">{{reference.name}} - {{editMode}}/ {{activeCard}}</span> <span (click)="editRef()" style="float:right"><i class="fa fa-pencil-square-o"></i></span>
 	</div>
-
 	<div class="flip clearfix">
 		<div class="card-block clearfix" [ngClass]="{flipped: isFlipped}" (click)="toggleFlip(!isFlipped)">
 			<div class="row">
 				<div class="face front col-xs-12">
 					<p class="card-text">{{reference.value}}</p>
 				</div>
-
-
 				<div class="face back col-xs-12 clearfix">
 					<p class="card-text">back of card This is a reference thing that has a very very long item very very very very . This is a reference thing
 						that has a very very long item very very very very .This is a reference thing that has a very very long item very very

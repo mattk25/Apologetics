@@ -1,9 +1,11 @@
-import {Component, Input } from 'angular2/core';
+import {Component, Input, Output, EventEmitter } from 'angular2/core';
 import {ReferenceService} from '../../../shared/services/reference.service';
 import {Reference} from '../../model/reference';
 import {ROUTER_DIRECTIVES} from 'angular2/router';
 import {Router} from 'angular2/router';
 import {DragulaService, Dragula} from 'ng2-dragula/ng2-dragula';
+import {TopicComponent} from '../topics/topic-main.component';
+import {EmitterService} from '../../../shared/services/EmitterService';
 
 @Component({
     selector: 'ref-card',
@@ -14,10 +16,18 @@ import {DragulaService, Dragula} from 'ng2-dragula/ng2-dragula';
 })
 export class ReferenceCard {
     @Input() reference: Reference;
+	@Input() editMode: string;
+	@Output() startEdits = new EventEmitter();
     isFlipped = false;
     typeStyles = {'bg-warning': false, 'bg-success': false};
 
-    constructor(private __referenceService: ReferenceService, _router: Router) { }
+
+	isVisible: boolean = true;
+	@Input() activeCard: boolean;
+
+    constructor(private __referenceService: ReferenceService, _router: Router) {
+		console.log(this.editMode);
+	 }
 
     toggleFlip(newState) {
        this.isFlipped = newState;
@@ -29,9 +39,18 @@ export class ReferenceCard {
 		console.log(event);
 	}
 
+	editRef() {
+		this.activeCard = true;
+		this.startEdits.emit(true);
+	}
+
     ngOnInit() {
-        if(this.reference.type === 'Quote') {
+        console.log(this.editMode);
+		if(this.reference.type === 'Quote') {
             this.typeStyles['bg-success'] = true;
         }
+
+
+	EmitterService.get("exitEditMode").subscribe(data => this.activeCard=false);
     }
 }
